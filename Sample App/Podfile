@@ -1,0 +1,22 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'Sample App' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Sample App
+  pod 'Down', '~> 0.4'
+  pod 'UIColor_Hex_Swift', '~> 3.0.1'
+
+  target 'Sample AppTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'Sample AppUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
