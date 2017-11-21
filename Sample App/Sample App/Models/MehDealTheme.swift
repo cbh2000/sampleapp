@@ -11,7 +11,7 @@ import UIColor_Hex_Swift
 import UIKit
 
 struct MehDealTheme: Decodable {
-    enum CodingKey: Swift.CodingKey {
+    enum CodingKeys: Swift.CodingKey {
         case accentColor
         case backgroundColor
         case backgroundImage
@@ -24,7 +24,7 @@ struct MehDealTheme: Decodable {
     let foreground: String
     
     init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKey.self)
+        let container = try decoder.container(keyedBy: CodingKeys.self)
         
         let accentColorString = try container.decode(String.self, forKey: .accentColor)
         accentColor = try UIColor(rgba_throws: accentColorString)

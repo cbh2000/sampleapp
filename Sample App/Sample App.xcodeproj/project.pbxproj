@@ -10,6 +10,7 @@
 		16F6CA10369F8F7C35EF6778 /* Pods_Sample_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DBC07C1B11A992995AED4C7 /* Pods_Sample_AppTests.framework */; };
 		499870E01FC4AE24001D8EA9 /* MehDeal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499870DF1FC4AE24001D8EA9 /* MehDeal.swift */; };
 		499870E21FC4AE7E001D8EA9 /* MehDealTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499870E11FC4AE7E001D8EA9 /* MehDealTheme.swift */; };
+		49A964481FC4BAF500C64B8B /* MehDealTopic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A964471FC4BAF500C64B8B /* MehDealTopic.swift */; };
 		49D4C1F41FC498AC00A5424E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D4C1F31FC498AC00A5424E /* AppDelegate.swift */; };
 		49D4C1F61FC498AC00A5424E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D4C1F51FC498AC00A5424E /* ViewController.swift */; };
 		49D4C1F91FC498AC00A5424E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49D4C1F71FC498AC00A5424E /* Main.storyboard */; };
@@ -49,6 +50,7 @@
 		389688EE346C8EB9082FCFF3 /* Pods-Sample App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sample App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sample App/Pods-Sample App.release.xcconfig"; sourceTree = "<group>"; };
 		499870DF1FC4AE24001D8EA9 /* MehDeal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MehDeal.swift; sourceTree = "<group>"; };
 		499870E11FC4AE7E001D8EA9 /* MehDealTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MehDealTheme.swift; sourceTree = "<group>"; };
+		49A964471FC4BAF500C64B8B /* MehDealTopic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MehDealTopic.swift; sourceTree = "<group>"; };
 		49D4C1F01FC498AC00A5424E /* Sample App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sample App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		49D4C1F31FC498AC00A5424E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49D4C1F51FC498AC00A5424E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +126,17 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		49A964491FC4BAF800C64B8B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				49D4C2241FC49BC200A5424E /* MehRoot.swift */,
+				499870DF1FC4AE24001D8EA9 /* MehDeal.swift */,
+				499870E11FC4AE7E001D8EA9 /* MehDealTheme.swift */,
+				49A964471FC4BAF500C64B8B /* MehDealTopic.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		49D4C1E71FC498AC00A5424E = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +162,7 @@
 		49D4C1F21FC498AC00A5424E /* Sample App */ = {
 			isa = PBXGroup;
 			children = (
+				49A964491FC4BAF800C64B8B /* Models */,
 				49D4C1F31FC498AC00A5424E /* AppDelegate.swift */,
 				49D4C1F51FC498AC00A5424E /* ViewController.swift */,
 				49D4C1F71FC498AC00A5424E /* Main.storyboard */,
@@ -156,9 +170,6 @@
 				49D4C1FF1FC498AC00A5424E /* LaunchScreen.storyboard */,
 				49D4C2021FC498AC00A5424E /* Info.plist */,
 				49D4C1FA1FC498AC00A5424E /* Sample_App.xcdatamodeld */,
-				49D4C2241FC49BC200A5424E /* MehRoot.swift */,
-				499870DF1FC4AE24001D8EA9 /* MehDeal.swift */,
-				499870E11FC4AE7E001D8EA9 /* MehDealTheme.swift */,
 			);
 			path = "Sample App";
 			sourceTree = "<group>";
@@ -484,6 +495,7 @@
 				49D4C1FC1FC498AC00A5424E /* Sample_App.xcdatamodeld in Sources */,
 				49D4C2251FC49BC200A5424E /* MehRoot.swift in Sources */,
 				499870E01FC4AE24001D8EA9 /* MehDeal.swift in Sources */,
+				49A964481FC4BAF500C64B8B /* MehDealTopic.swift in Sources */,
 				49D4C1F41FC498AC00A5424E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

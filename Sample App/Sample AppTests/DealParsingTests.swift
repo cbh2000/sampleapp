@@ -92,7 +92,30 @@ class DealParsingTests: XCTestCase {
     func testTopicParsing() {
         let example = """
 {"commentCount":35,"createdAt":"2017-11-21T05:00:05.645Z","id":"5a13b2d5cb6c920d90c23562","replyCount":26,"url":"https://meh.com/forum/topics/2-for-tuesday-microfiber-sheets-sets","voteCount":1}
-"""
+""".data(using: .utf8)!
+        do {
+            let topic = try JSONDecoder().decode(MehDealTopic.self, from: example)
+            
+            let commentCount = 35
+            XCTAssert(topic.commentCount == commentCount)
+            
+            let createdAt = Date(timeIntervalSince1970: 1511240405.645)
+            XCTAssert(topic.createdAt == createdAt)
+            
+            let id = "5a13b2d5cb6c920d90c23562"
+            XCTAssert(topic.id == id)
+            
+            let replyCount = 26
+            XCTAssert(topic.replyCount == replyCount)
+            
+            let url = URL(string: "https://meh.com/forum/topics/2-for-tuesday-microfiber-sheets-sets")!
+            XCTAssert(topic.url == url)
+            
+            let voteCount = 1
+            XCTAssert(topic.voteCount == voteCount)
+        } catch {
+            XCTFail("Failed to parse: \(error)")
+        }
     }
     
     func testURLParsing() {
