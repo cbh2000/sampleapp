@@ -18,14 +18,6 @@ class DealParsingTests: XCTestCase {
         return decoder
     }()
     
-    func testFeaturesParsing() {
-        let example = "- These microfiber sheets are made with only the microest of fibers\r\n- The king, queen, and full sets get 2 pillowcases each (so 4 total), the \"twin\" set paradoxically gets only 1 (so 2 total)\r\n- Having 2 sets of the same sheets makes the laundry-day-switchover much smoother\r\n- And having brand-new microfiber sheets makes sleeping much smoother\r\n- Model: IYSMICRO (The internet tells us that \"IYS\" could refer to the \"[International Year Of Sanitation](https://en.wikipedia.org/wiki/International_Year_of_Sanitation),\" a 2008 push by the United Nations to get college students to clean their sheets at least once per semester)."
-    }
-    
-    func testIDParsing() {
-        let example = "a6k5A000000CwLJQA0"
-    }
-    
     func testItemsParsing() {
         let example = """
 [{"attributes":[{"key":"Size","value":"Twin"},{"key":"Color","value":"White"}],"condition":"New","id":"110266","price":18,"photo":"https://res.cloudinary.com/mediocre/image/upload/v1511214860/ulzymtibqzkewyfpc0ow.png"},{"attributes":[{"key":"Size","value":"Twin"},{"key":"Color","value":"Taupe"}],"condition":"New","id":"110265","price":18,"photo":"https://res.cloudinary.com/mediocre/image/upload/v1511214860/ulzymtibqzkewyfpc0ow.png"},{"attributes":[{"key":"Size","value":"Twin"},{"key":"Color","value":"Silver"}],"condition":"New","id":"110264","price":18,"photo":"https://res.cloudinary.com/mediocre/image/upload/v1511214860/ulzymtibqzkewyfpc0ow.png"},{"attributes":[{"key":"Size","value":"Twin"},{"key":"Color","value":"Sage"}],"condition":"New","id":"110263","price":18,"photo":"https://res.cloudinary.com/mediocre/image/upload/v1511214860/ulzymtibqzkewyfpc0ow.png"},{"attributes":[{"key":"Size","value":"Full"},{"key":"Color","value":"White"}],"condition":"New","id":"110270","price":22,"photo":"https://res.cloudinary.com/mediocre/image/upload/v1511214860/ulzymtibqzkewyfpc0ow.png"},{"attributes":[{"key":"Size","value":"Full"},{"key":"Color","value":"Taupe"}],"condition":"New","id":"110269","price":22,"photo":"https://res.cloudinary.com/mediocre/image/upload/v1511214860/ulzymtibqzkewyfpc0ow.png"},{"attributes":[{"key":"Size","value":"Full"},{"key":"Color","value":"Silver"}],"condition":"New","id":"110268","price":22,"photo":"https://res.cloudinary.com/mediocre/image/upload/v1511214860/ulzymtibqzkewyfpc0ow.png"},{"attributes":[{"key":"Size","value":"Full"},{"key":"Color","value":"Sage"}],"condition":"New","id":"110267","price":22,"photo":"https://res.cloudinary.com/mediocre/image/upload/v1511214860/ulzymtibqzkewyfpc0ow.png"},{"attributes":[{"key":"Size","value":"Queen"},{"key":"Color","value":"White"}],"condition":"New","id":"110278","price":26,"photo":"https://res.cloudinary.com/mediocre/image/upload/v1511214860/ulzymtibqzkewyfpc0ow.png"},{"attributes":[{"key":"Size","value":"Queen"},{"key":"Color","value":"Taupe"}],"condition":"New","id":"110277","price":26,"photo":"https://res.cloudinary.com/mediocre/image/upload/v1511214860/ulzymtibqzkewyfpc0ow.png"},{"attributes":[{"key":"Size","value":"Queen"},{"key":"Color","value":"Silver"}],"condition":"New","id":"110276","price":26,"photo":"https://res.cloudinary.com/mediocre/image/upload/v1511214860/ulzymtibqzkewyfpc0ow.png"},{"attributes":[{"key":"Size","value":"Queen"},{"key":"Color","value":"Sage"}],"condition":"New","id":"110275","price":26,"photo":"https://res.cloudinary.com/mediocre/image/upload/v1511214860/ulzymtibqzkewyfpc0ow.png"},{"attributes":[{"key":"Size","value":"King"},{"key":"Color","value":"White"}],"condition":"New","id":"110274","price":29,"photo":"https://res.cloudinary.com/mediocre/image/upload/v1511214860/ulzymtibqzkewyfpc0ow.png"},{"attributes":[{"key":"Size","value":"King"},{"key":"Color","value":"Taupe"}],"condition":"New","id":"110273","price":29,"photo":"https://res.cloudinary.com/mediocre/image/upload/v1511214860/ulzymtibqzkewyfpc0ow.png"},{"attributes":[{"key":"Size","value":"King"},{"key":"Color","value":"Silver"}],"condition":"New","id":"110272","price":29,"photo":"https://res.cloudinary.com/mediocre/image/upload/v1511214860/ulzymtibqzkewyfpc0ow.png"},{"attributes":[{"key":"Size","value":"King"},{"key":"Color","value":"Sage"}],"condition":"New","id":"110271","price":29,"photo":"https://res.cloudinary.com/mediocre/image/upload/v1511214860/ulzymtibqzkewyfpc0ow.png"}]
@@ -131,15 +123,6 @@ class DealParsingTests: XCTestCase {
         }
     }
     
-    func testTitleParsing() {
-        let example = "2-for-Tuesday: Microfiber Sheets Sets"
-    }
-    
-    func testSoldOutAtParsing() {
-        // This field may not be present if it hasn't been sold out yet.
-        let example = "2017-11-21T12:57:17.775Z"
-    }
-    
     func testSpecificationsParsing() {
         let example = "Specs\r\n====\r\n- Model: IYSMICRO\r\n- Condition: New\r\n- Made of microfiber\r\n- The fitted sheet fits right on your bed and then you sleep on it\r\n- The other sheet goes over you\r\n- The pillow case is like a hard suitcase for your pillow except it is soft and you put your head on it\r\n- Kinda like a non-portable sleeping bag\r\n\r\nWhat's in the Box?\r\n====\r\n2x Fitted sheet\r\n2x Top Sheet\r\n4x Pillow cases (ironically only 2x with Twin size)\r\n\r\nPictures\r\n====\r\n[Sheet colors](http://res.cloudinary.com/mediocre/image/upload/v1511211219/l4viytmqguzvpumkjt32.png)\r\n[bed](http://res.cloudinary.com/mediocre/image/upload/v1511211224/cm9obc70ah4zzjq7eopt.png)\r\n[Stack of white](http://res.cloudinary.com/mediocre/image/upload/v1511211227/r9bsnm2wnlbschnyybxd.png)\r\n[White](https://res.cloudinary.com/mediocre/image/upload/v1511212455/po6qqnc4oeuo8dfovurr.png)\r\n[Taupe](http://res.cloudinary.com/mediocre/image/upload/v1511211224/c6duowpipdhbvqly3drc.png)\r\n[Stack of taupe](http://res.cloudinary.com/mediocre/image/upload/v1511211226/k062fgvk01lmvaomhyv1.png)\r\n[Taupe sheet](http://res.cloudinary.com/mediocre/image/upload/v1511211226/o249fjk6awqflat5fukd.png)\r\n[Sage](http://res.cloudinary.com/mediocre/image/upload/v1511211222/dgoc8anwu5k1go8rzbjc.png)\r\n[Stack of Sage](http://res.cloudinary.com/mediocre/image/upload/v1511211224/jr7gs6ks9xopquzbcung.png)\r\n[Sage sheet](http://res.cloudinary.com/mediocre/image/upload/v1511211222/nlhvqz9aer34v3nsptbw.png)\r\n[Silver](https://res.cloudinary.com/mediocre/image/upload/v1511211628/gwahgjnc7vinna6ir2ao.png)\r\n[Silver stack](https://res.cloudinary.com/mediocre/image/upload/v1511211647/kdachiulc4ke1rmm2652.png)\r\n[Silver sheet](https://res.cloudinary.com/mediocre/image/upload/v1511211666/jylqmv6js4uksxrwj6fw.png)\r\n[Shitty packaging](https://res.cloudinary.com/mediocre/image/upload/v1511212325/fm5syzyvaqlzhsdp2wjl.png)\r\n\r\nPrice Comparison\r\n====\r\n[$27.98 - $49.98 (for 2) at Amazon](https://www.amazon.com/dp/B06X9T1HMK/?tag=meh0ec-20)"
     }
@@ -222,9 +205,5 @@ class DealParsingTests: XCTestCase {
         } catch {
             XCTFail("Failed to parse: \(error)")
         }
-    }
-    
-    func testURLParsing() {
-        let example = "https://meh.com/deals/2-for-tuesday-microfiber-sheets-sets"
     }
 }
