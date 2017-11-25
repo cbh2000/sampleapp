@@ -9,12 +9,6 @@
 import Foundation
 
 struct MehISO8601 {
-    struct InvalidDateFormatError: Error {
-        var localizedDescription: String {
-            return "Invalid date format encountered in JSON."
-        }
-    }
-    
     static let formatter = { () -> DateFormatter in
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"

@@ -29,7 +29,52 @@ class DealParsingTests: XCTestCase {
     func testItemsParsing() {
         let example = """
 [{"attributes":[{"key":"Size","value":"Twin"},{"key":"Color","value":"White"}],"condition":"New","id":"110266","price":18,"photo":"https://res.cloudinary.com/mediocre/image/upload/v1511214860/ulzymtibqzkewyfpc0ow.png"},{"attributes":[{"key":"Size","value":"Twin"},{"key":"Color","value":"Taupe"}],"condition":"New","id":"110265","price":18,"photo":"https://res.cloudinary.com/mediocre/image/upload/v1511214860/ulzymtibqzkewyfpc0ow.png"},{"attributes":[{"key":"Size","value":"Twin"},{"key":"Color","value":"Silver"}],"condition":"New","id":"110264","price":18,"photo":"https://res.cloudinary.com/mediocre/image/upload/v1511214860/ulzymtibqzkewyfpc0ow.png"},{"attributes":[{"key":"Size","value":"Twin"},{"key":"Color","value":"Sage"}],"condition":"New","id":"110263","price":18,"photo":"https://res.cloudinary.com/mediocre/image/upload/v1511214860/ulzymtibqzkewyfpc0ow.png"},{"attributes":[{"key":"Size","value":"Full"},{"key":"Color","value":"White"}],"condition":"New","id":"110270","price":22,"photo":"https://res.cloudinary.com/mediocre/image/upload/v1511214860/ulzymtibqzkewyfpc0ow.png"},{"attributes":[{"key":"Size","value":"Full"},{"key":"Color","value":"Taupe"}],"condition":"New","id":"110269","price":22,"photo":"https://res.cloudinary.com/mediocre/image/upload/v1511214860/ulzymtibqzkewyfpc0ow.png"},{"attributes":[{"key":"Size","value":"Full"},{"key":"Color","value":"Silver"}],"condition":"New","id":"110268","price":22,"photo":"https://res.cloudinary.com/mediocre/image/upload/v1511214860/ulzymtibqzkewyfpc0ow.png"},{"attributes":[{"key":"Size","value":"Full"},{"key":"Color","value":"Sage"}],"condition":"New","id":"110267","price":22,"photo":"https://res.cloudinary.com/mediocre/image/upload/v1511214860/ulzymtibqzkewyfpc0ow.png"},{"attributes":[{"key":"Size","value":"Queen"},{"key":"Color","value":"White"}],"condition":"New","id":"110278","price":26,"photo":"https://res.cloudinary.com/mediocre/image/upload/v1511214860/ulzymtibqzkewyfpc0ow.png"},{"attributes":[{"key":"Size","value":"Queen"},{"key":"Color","value":"Taupe"}],"condition":"New","id":"110277","price":26,"photo":"https://res.cloudinary.com/mediocre/image/upload/v1511214860/ulzymtibqzkewyfpc0ow.png"},{"attributes":[{"key":"Size","value":"Queen"},{"key":"Color","value":"Silver"}],"condition":"New","id":"110276","price":26,"photo":"https://res.cloudinary.com/mediocre/image/upload/v1511214860/ulzymtibqzkewyfpc0ow.png"},{"attributes":[{"key":"Size","value":"Queen"},{"key":"Color","value":"Sage"}],"condition":"New","id":"110275","price":26,"photo":"https://res.cloudinary.com/mediocre/image/upload/v1511214860/ulzymtibqzkewyfpc0ow.png"},{"attributes":[{"key":"Size","value":"King"},{"key":"Color","value":"White"}],"condition":"New","id":"110274","price":29,"photo":"https://res.cloudinary.com/mediocre/image/upload/v1511214860/ulzymtibqzkewyfpc0ow.png"},{"attributes":[{"key":"Size","value":"King"},{"key":"Color","value":"Taupe"}],"condition":"New","id":"110273","price":29,"photo":"https://res.cloudinary.com/mediocre/image/upload/v1511214860/ulzymtibqzkewyfpc0ow.png"},{"attributes":[{"key":"Size","value":"King"},{"key":"Color","value":"Silver"}],"condition":"New","id":"110272","price":29,"photo":"https://res.cloudinary.com/mediocre/image/upload/v1511214860/ulzymtibqzkewyfpc0ow.png"},{"attributes":[{"key":"Size","value":"King"},{"key":"Color","value":"Sage"}],"condition":"New","id":"110271","price":29,"photo":"https://res.cloudinary.com/mediocre/image/upload/v1511214860/ulzymtibqzkewyfpc0ow.png"}]
-"""
+""".data(using: .utf8)!
+        
+        do {
+            let items = try decoder.decode([MehDealItem].self, from: example)
+            
+            guard items.count == 16 else {
+                XCTFail("Expected 16 items, but got \(items.count).")
+                return
+            }
+            
+            // There are too many items to test all of them. We'll just test the first and last items.
+            
+            // First item.
+            //
+            // {"attributes":[{"key":"Size","value":"Twin"},{"key":"Color","value":"White"}],"condition":"New","id":"110266","price":18,"photo":"https://res.cloudinary.com/mediocre/image/upload/v1511214860/ulzymtibqzkewyfpc0ow.png"}
+            guard items[0].attributes.count == 2 else {
+                XCTFail("Expected item 0 to have 2 attributes, but it has \(items[0].attrtibutes.count).")
+                return
+            }
+            XCTAssert(items[0].attributes[0].key == "Size")
+            XCTAssert(items[0].attributes[0].value == "Twin")
+            XCTAssert(items[0].attributes[1].key == "Color")
+            XCTAssert(items[0].attributes[1].value == "White")
+            XCTAssert(items[0].condition == "New")
+            XCTAssert(items[0].id == "110266")
+            XCTAssert(items[0].price == 18)
+            XCTAssert(items[0].photo == URL(string: "https://res.cloudinary.com/mediocre/image/upload/v1511214860/ulzymtibqzkewyfpc0ow.png")!)
+            
+            // Last item.
+            //
+            // {"attributes":[{"key":"Size","value":"King"},{"key":"Color","value":"Sage"}],"condition":"New","id":"110271","price":29,"photo":"https://res.cloudinary.com/mediocre/image/upload/v1511214860/ulzymtibqzkewyfpc0ow.png"}
+            guard items[15].attributes.count == 2 else {
+                XCTFail("Expected item 0 to have 2 attributes, but it has \(items[0].attrtibutes.count).")
+                return
+            }
+            XCTAssert(items[15].attributes[0].key == "Size")
+            XCTAssert(items[15].attributes[0].value == "King")
+            XCTAssert(items[15].attributes[1].key == "Color")
+            XCTAssert(items[15].attributes[1].value == "Sage")
+            XCTAssert(items[15].condition == "New")
+            XCTAssert(items[15].id == "110271")
+            XCTAssert(items[15].price == 29)
+            XCTAssert(items[15].photo == URL(string: "https://res.cloudinary.com/mediocre/image/upload/v1511214860/ulzymtibqzkewyfpc0ow.png")!)
+        } catch {
+            XCTFail("Failed with error \(error)")
+        }
     }
     
     func testLaunchesParsing() {
