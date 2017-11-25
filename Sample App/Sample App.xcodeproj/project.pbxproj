@@ -24,6 +24,7 @@
 		49D4C2291FC4A52A00A5424E /* meh_sample.json in Resources */ = {isa = PBXBuildFile; fileRef = 49D4C2281FC4A52A00A5424E /* meh_sample.json */; };
 		5EC1C757293308B97AF114D6 /* Pods_Sample_AppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 173CEF6958A4263F9F12029B /* Pods_Sample_AppUITests.framework */; };
 		789DBE1C979CC4A0F4A18CA8 /* Pods_Sample_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99C90E7099973015C3B8F083 /* Pods_Sample_App.framework */; };
+		D0B7B7051FCA273C00F5E040 /* MehDealStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B7B7041FCA273C00F5E040 /* MehDealStory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		8F82FA122CB1D0517F3EB016 /* Pods-Sample AppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sample AppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sample AppUITests/Pods-Sample AppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		99C90E7099973015C3B8F083 /* Pods_Sample_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sample_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DBC07C1B11A992995AED4C7 /* Pods_Sample_AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sample_AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0B7B7041FCA273C00F5E040 /* MehDealStory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MehDealStory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 				499870DF1FC4AE24001D8EA9 /* MehDeal.swift */,
 				499870E11FC4AE7E001D8EA9 /* MehDealTheme.swift */,
 				49A964471FC4BAF500C64B8B /* MehDealTopic.swift */,
+				D0B7B7041FCA273C00F5E040 /* MehDealStory.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -496,6 +499,7 @@
 				49D4C2251FC49BC200A5424E /* MehRoot.swift in Sources */,
 				499870E01FC4AE24001D8EA9 /* MehDeal.swift in Sources */,
 				49A964481FC4BAF500C64B8B /* MehDealTopic.swift in Sources */,
+				D0B7B7051FCA273C00F5E040 /* MehDealStory.swift in Sources */,
 				49D4C1F41FC498AC00A5424E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

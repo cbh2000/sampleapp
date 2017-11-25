@@ -8,6 +8,7 @@
 
 import Foundation
 import XCTest
+import Down
 @testable import Sample_App
 
 class DealParsingTests: XCTestCase {
@@ -53,7 +54,19 @@ class DealParsingTests: XCTestCase {
     func testStoryParsing() {
         let example = """
 {"title":"Consider The Hedgehog","body":"Hedgehogs have roughly the same life expectancy as bedsheets â€” about 5 years. Yet when their beloved pets die, most responsible hedgehog owners dispose of them in a proper manner. Many sheet owners, however, cling to their tattered linens long, long after their time on this earth has passed.\r\n\r\nIt may be time for you to take a good look at your sheets and decide whether itâ€™s time to let go. We know itâ€™s not an easy decision. You might need some time together to decide (or mourn).\r\n\r\nWeâ€™re not saying all sheets die by year 5. High-quality or lightly used ones can last up to a decade. But for the most part, even the most expensive sheets expire in much less time.\r\n\r\nNor are we saying that the sheets cannot be used after being stretched, faded, and pilled. Just as a pet hedgehog whose spirit has passed from this corporeal realm can still be cuddled and given food, old sheets can still be used, albeit in a macabre dance of death.\r\n\r\nRemember when you learned that underwear eventually dies? Maybe you were in your 20s and your girlfriend or boyfriend at the time pointed out that the elastic in your oldest pair of drawers no longer held them tightly to your body, but merely draped them over your hips like a renaissance Venus. Before that moment you had assumed that a good pair of underwear should be immortal. After, that you should toss out your oldest undies every so often.\r\n\r\nThe problem lies in the slow nature of this death. Unlike biological creatures which pass from â€œaliveâ€ to â€œdeadâ€ in a very discrete manner, sheets lose their vital spirit so slowly that it can be difficult to perceive. â€œThese sheets are still good,â€ you tell yourself, because at no point did anything drastically change. But if you were an outsider inspecting your old sheets for the first time, you would immediately see that theyâ€™re more dead than alive.\r\n\r\nWeâ€™re not trying to hard-sell these sheets. You can buy them or you can not buy them and weâ€™ll still be happy youâ€™re here. Weâ€™re just suggesting that sheets should be considered a *consumable* product that one replaces regularly, like batteries, iPhones, or hedgehogs."}
-"""
+""".data(using: .utf8)!
+        
+        do {
+            let story = try JSONDecoder().decode(MehDealStory.self, from: example)
+            
+            let title = "Consider The Hedgehog"
+            XCTAssert(story.title == title)
+            
+            let markdown = "Hedgehogs have roughly the same life expectancy as bedsheets â€” about 5 years. Yet when their beloved pets die, most responsible hedgehog owners dispose of them in a proper manner. Many sheet owners, however, cling to their tattered linens long, long after their time on this earth has passed.\r\n\r\nIt may be time for you to take a good look at your sheets and decide whether itâ€™s time to let go. We know itâ€™s not an easy decision. You might need some time together to decide (or mourn).\r\n\r\nWeâ€™re not saying all sheets die by year 5. High-quality or lightly used ones can last up to a decade. But for the most part, even the most expensive sheets expire in much less time.\r\n\r\nNor are we saying that the sheets cannot be used after being stretched, faded, and pilled. Just as a pet hedgehog whose spirit has passed from this corporeal realm can still be cuddled and given food, old sheets can still be used, albeit in a macabre dance of death.\r\n\r\nRemember when you learned that underwear eventually dies? Maybe you were in your 20s and your girlfriend or boyfriend at the time pointed out that the elastic in your oldest pair of drawers no longer held them tightly to your body, but merely draped them over your hips like a renaissance Venus. Before that moment you had assumed that a good pair of underwear should be immortal. After, that you should toss out your oldest undies every so often.\r\n\r\nThe problem lies in the slow nature of this death. Unlike biological creatures which pass from â€œaliveâ€ to â€œdeadâ€ in a very discrete manner, sheets lose their vital spirit so slowly that it can be difficult to perceive. â€œThese sheets are still good,â€ you tell yourself, because at no point did anything drastically change. But if you were an outsider inspecting your old sheets for the first time, you would immediately see that theyâ€™re more dead than alive.\r\n\r\nWeâ€™re not trying to hard-sell these sheets. You can buy them or you can not buy them and weâ€™ll still be happy youâ€™re here. Weâ€™re just suggesting that sheets should be considered a *consumable* product that one replaces regularly, like batteries, iPhones, or hedgehogs."
+            XCTAssert(story.bodyMarkdown == markdown)
+        } catch {
+            XCTFail("Failed with error \(error)")
+        }
     }
     
     func testThemeParsing() {
