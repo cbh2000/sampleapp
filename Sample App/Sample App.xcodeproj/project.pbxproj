@@ -137,14 +137,14 @@
 		49A964491FC4BAF800C64B8B /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				49D4C2241FC49BC200A5424E /* MehRoot.swift */,
 				499870DF1FC4AE24001D8EA9 /* MehDeal.swift */,
+				D0B7B70A1FCA364C00F5E040 /* MehDealItem.swift */,
+				D0B7B7061FCA318700F5E040 /* MehDealLaunch.swift */,
+				D0B7B7041FCA273C00F5E040 /* MehDealStory.swift */,
 				499870E11FC4AE7E001D8EA9 /* MehDealTheme.swift */,
 				49A964471FC4BAF500C64B8B /* MehDealTopic.swift */,
-				D0B7B7041FCA273C00F5E040 /* MehDealStory.swift */,
-				D0B7B7061FCA318700F5E040 /* MehDealLaunch.swift */,
 				D0B7B7081FCA31DE00F5E040 /* MehISO8601.swift */,
-				D0B7B70A1FCA364C00F5E040 /* MehDealItem.swift */,
+				49D4C2241FC49BC200A5424E /* MehRoot.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -176,12 +176,12 @@
 			children = (
 				49A964491FC4BAF800C64B8B /* Models */,
 				49D4C1F31FC498AC00A5424E /* AppDelegate.swift */,
-				49D4C1F51FC498AC00A5424E /* ViewController.swift */,
-				49D4C1F71FC498AC00A5424E /* Main.storyboard */,
 				49D4C1FD1FC498AC00A5424E /* Assets.xcassets */,
-				49D4C1FF1FC498AC00A5424E /* LaunchScreen.storyboard */,
 				49D4C2021FC498AC00A5424E /* Info.plist */,
+				49D4C1FF1FC498AC00A5424E /* LaunchScreen.storyboard */,
+				49D4C1F71FC498AC00A5424E /* Main.storyboard */,
 				49D4C1FA1FC498AC00A5424E /* Sample_App.xcdatamodeld */,
+				49D4C1F51FC498AC00A5424E /* ViewController.swift */,
 			);
 			path = "Sample App";
 			sourceTree = "<group>";
@@ -189,10 +189,10 @@
 		49D4C20A1FC498AC00A5424E /* Sample AppTests */ = {
 			isa = PBXGroup;
 			children = (
-				49D4C20B1FC498AC00A5424E /* Sample_AppTests.swift */,
-				49D4C20D1FC498AC00A5424E /* Info.plist */,
 				49D4C2261FC49BD200A5424E /* DealParsingTests.swift */,
+				49D4C20D1FC498AC00A5424E /* Info.plist */,
 				49D4C2281FC4A52A00A5424E /* meh_sample.json */,
+				49D4C20B1FC498AC00A5424E /* Sample_AppTests.swift */,
 			);
 			path = "Sample AppTests";
 			sourceTree = "<group>";
