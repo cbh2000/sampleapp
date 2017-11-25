@@ -45,7 +45,7 @@ class DealParsingTests: XCTestCase {
             //
             // {"attributes":[{"key":"Size","value":"Twin"},{"key":"Color","value":"White"}],"condition":"New","id":"110266","price":18,"photo":"https://res.cloudinary.com/mediocre/image/upload/v1511214860/ulzymtibqzkewyfpc0ow.png"}
             guard items[0].attributes.count == 2 else {
-                XCTFail("Expected item 0 to have 2 attributes, but it has \(items[0].attrtibutes.count).")
+                XCTFail("Expected item 0 to have 2 attributes, but it has \(items[0].attributes.count).")
                 return
             }
             XCTAssert(items[0].attributes[0].key == "Size")
@@ -61,7 +61,7 @@ class DealParsingTests: XCTestCase {
             //
             // {"attributes":[{"key":"Size","value":"King"},{"key":"Color","value":"Sage"}],"condition":"New","id":"110271","price":29,"photo":"https://res.cloudinary.com/mediocre/image/upload/v1511214860/ulzymtibqzkewyfpc0ow.png"}
             guard items[15].attributes.count == 2 else {
-                XCTFail("Expected item 0 to have 2 attributes, but it has \(items[0].attrtibutes.count).")
+                XCTFail("Expected item 0 to have 2 attributes, but it has \(items[15].attributes.count).")
                 return
             }
             XCTAssert(items[15].attributes[0].key == "Size")
