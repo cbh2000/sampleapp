@@ -29,7 +29,23 @@ class DealParsingTests: XCTestCase {
     func testLaunchesParsing() {
         let example = """
 [{"soldOutAt":"2017-11-21T12:57:17.775Z"},{"soldOutAt":null}]
-"""
+""".data(using: .utf8)!
+        
+        do {
+            let launches = JSONDecoder().decode([MehDealLaunch].self, from: example)
+            
+            guard launches.count == 2 else {
+                XCTFail("Expected 2 launches, but got \(launches.count)")
+                return
+            }
+            
+            let firstSoldOutAt = Date(timeIntervalSince1970: 1511269037.775)
+            XCTAssert(launches[0].soldOutAt == firstSoldOutAt)
+            
+            XCTAssert(launches[1].soldOutAt == nil)
+        } catch {
+            XCTFail("Failed with error \(error)")
+        }
     }
     
     func testPhotosParsing() {
