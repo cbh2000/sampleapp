@@ -35,7 +35,33 @@ class DealParsingTests: XCTestCase {
     func testPhotosParsing() {
         let example = """
 ["https://res.cloudinary.com/mediocre/image/upload/v1511214860/ulzymtibqzkewyfpc0ow.png","http://res.cloudinary.com/mediocre/image/upload/v1511211224/cm9obc70ah4zzjq7eopt.png","http://res.cloudinary.com/mediocre/image/upload/v1511211227/r9bsnm2wnlbschnyybxd.png","https://res.cloudinary.com/mediocre/image/upload/v1511212455/po6qqnc4oeuo8dfovurr.png","http://res.cloudinary.com/mediocre/image/upload/v1511211224/c6duowpipdhbvqly3drc.png","http://res.cloudinary.com/mediocre/image/upload/v1511211226/k062fgvk01lmvaomhyv1.png","http://res.cloudinary.com/mediocre/image/upload/v1511211226/o249fjk6awqflat5fukd.png","http://res.cloudinary.com/mediocre/image/upload/v1511211222/dgoc8anwu5k1go8rzbjc.png","http://res.cloudinary.com/mediocre/image/upload/v1511211224/jr7gs6ks9xopquzbcung.png","http://res.cloudinary.com/mediocre/image/upload/v1511211222/nlhvqz9aer34v3nsptbw.png","https://res.cloudinary.com/mediocre/image/upload/v1511211628/gwahgjnc7vinna6ir2ao.png","https://res.cloudinary.com/mediocre/image/upload/v1511211647/kdachiulc4ke1rmm2652.png","https://res.cloudinary.com/mediocre/image/upload/v1511211666/jylqmv6js4uksxrwj6fw.png","https://res.cloudinary.com/mediocre/image/upload/v1511212325/fm5syzyvaqlzhsdp2wjl.png","https://res.cloudinary.com/mediocre/image/upload/v1511214266/wewp5vokyzg0agg93gnp.png"]
-"""
+""".data(using: .utf8)!
+        
+        do {
+            let photos = try JSONDecoder().decode([URL].self, from: example)
+            
+            let shouldBe: [String] = [
+                "https://res.cloudinary.com/mediocre/image/upload/v1511214860/ulzymtibqzkewyfpc0ow.png",
+                "http://res.cloudinary.com/mediocre/image/upload/v1511211224/cm9obc70ah4zzjq7eopt.png",
+                "http://res.cloudinary.com/mediocre/image/upload/v1511211227/r9bsnm2wnlbschnyybxd.png",
+                "https://res.cloudinary.com/mediocre/image/upload/v1511212455/po6qqnc4oeuo8dfovurr.png",
+                "http://res.cloudinary.com/mediocre/image/upload/v1511211224/c6duowpipdhbvqly3drc.png",
+                "http://res.cloudinary.com/mediocre/image/upload/v1511211226/k062fgvk01lmvaomhyv1.png",
+                "http://res.cloudinary.com/mediocre/image/upload/v1511211226/o249fjk6awqflat5fukd.png",
+                "http://res.cloudinary.com/mediocre/image/upload/v1511211222/dgoc8anwu5k1go8rzbjc.png",
+                "http://res.cloudinary.com/mediocre/image/upload/v1511211224/jr7gs6ks9xopquzbcung.png",
+                "http://res.cloudinary.com/mediocre/image/upload/v1511211222/nlhvqz9aer34v3nsptbw.png",
+                "https://res.cloudinary.com/mediocre/image/upload/v1511211628/gwahgjnc7vinna6ir2ao.png",
+                "https://res.cloudinary.com/mediocre/image/upload/v1511211647/kdachiulc4ke1rmm2652.png",
+                "https://res.cloudinary.com/mediocre/image/upload/v1511211666/jylqmv6js4uksxrwj6fw.png",
+                "https://res.cloudinary.com/mediocre/image/upload/v1511212325/fm5syzyvaqlzhsdp2wjl.png",
+                "https://res.cloudinary.com/mediocre/image/upload/v1511214266/wewp5vokyzg0agg93gnp.png"
+            ]
+            let shouldBeURLs = shouldBe.map { URL(string: $0)! }
+            XCTAssert(shouldBeURLs == photos)
+        } catch {
+            XCTFail("Failed with error \(error)")
+        }
     }
     
     func testTitleParsing() {
