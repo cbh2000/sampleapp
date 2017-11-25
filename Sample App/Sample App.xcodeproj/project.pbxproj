@@ -25,6 +25,8 @@
 		5EC1C757293308B97AF114D6 /* Pods_Sample_AppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 173CEF6958A4263F9F12029B /* Pods_Sample_AppUITests.framework */; };
 		789DBE1C979CC4A0F4A18CA8 /* Pods_Sample_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99C90E7099973015C3B8F083 /* Pods_Sample_App.framework */; };
 		D0B7B7051FCA273C00F5E040 /* MehDealStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B7B7041FCA273C00F5E040 /* MehDealStory.swift */; };
+		D0B7B7071FCA318700F5E040 /* MehDealLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B7B7061FCA318700F5E040 /* MehDealLaunch.swift */; };
+		D0B7B7091FCA31DE00F5E040 /* MehISO8601.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B7B7081FCA31DE00F5E040 /* MehISO8601.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 		99C90E7099973015C3B8F083 /* Pods_Sample_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sample_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DBC07C1B11A992995AED4C7 /* Pods_Sample_AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sample_AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0B7B7041FCA273C00F5E040 /* MehDealStory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MehDealStory.swift; sourceTree = "<group>"; };
+		D0B7B7061FCA318700F5E040 /* MehDealLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MehDealLaunch.swift; sourceTree = "<group>"; };
+		D0B7B7081FCA31DE00F5E040 /* MehISO8601.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MehISO8601.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +140,8 @@
 				499870E11FC4AE7E001D8EA9 /* MehDealTheme.swift */,
 				49A964471FC4BAF500C64B8B /* MehDealTopic.swift */,
 				D0B7B7041FCA273C00F5E040 /* MehDealStory.swift */,
+				D0B7B7061FCA318700F5E040 /* MehDealLaunch.swift */,
+				D0B7B7081FCA31DE00F5E040 /* MehISO8601.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -494,11 +500,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				499870E21FC4AE7E001D8EA9 /* MehDealTheme.swift in Sources */,
+				D0B7B7071FCA318700F5E040 /* MehDealLaunch.swift in Sources */,
 				49D4C1F61FC498AC00A5424E /* ViewController.swift in Sources */,
 				49D4C1FC1FC498AC00A5424E /* Sample_App.xcdatamodeld in Sources */,
 				49D4C2251FC49BC200A5424E /* MehRoot.swift in Sources */,
 				499870E01FC4AE24001D8EA9 /* MehDeal.swift in Sources */,
 				49A964481FC4BAF500C64B8B /* MehDealTopic.swift in Sources */,
+				D0B7B7091FCA31DE00F5E040 /* MehISO8601.swift in Sources */,
 				D0B7B7051FCA273C00F5E040 /* MehDealStory.swift in Sources */,
 				49D4C1F41FC498AC00A5424E /* AppDelegate.swift in Sources */,
 			);

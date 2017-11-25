@@ -16,10 +16,4 @@ struct MehDealStory: Decodable {
     
     let title: String
     let bodyMarkdown: String
-    
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        title = try container.decode(String.self, forKey: .title)
-        bodyMarkdown = try container.decode(String.self, forKey: .bodyMarkdown)
-    }
 }

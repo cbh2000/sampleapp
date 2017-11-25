@@ -12,6 +12,12 @@ import Down
 @testable import Sample_App
 
 class DealParsingTests: XCTestCase {
+    let decoder = { () -> JSONDecoder in
+        var decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .formatted(MehISO8601.formatter)
+        return decoder
+    }()
+    
     func testFeaturesParsing() {
         let example = "- These microfiber sheets are made with only the microest of fibers\r\n- The king, queen, and full sets get 2 pillowcases each (so 4 total), the \"twin\" set paradoxically gets only 1 (so 2 total)\r\n- Having 2 sets of the same sheets makes the laundry-day-switchover much smoother\r\n- And having brand-new microfiber sheets makes sleeping much smoother\r\n- Model: IYSMICRO (The internet tells us that \"IYS\" could refer to the \"[International Year Of Sanitation](https://en.wikipedia.org/wiki/International_Year_of_Sanitation),\" a 2008 push by the United Nations to get college students to clean their sheets at least once per semester)."
     }
@@ -32,7 +38,7 @@ class DealParsingTests: XCTestCase {
 """.data(using: .utf8)!
         
         do {
-            let launches = JSONDecoder().decode([MehDealLaunch].self, from: example)
+            let launches = try decoder.decode([MehDealLaunch].self, from: example)
             
             guard launches.count == 2 else {
                 XCTFail("Expected 2 launches, but got \(launches.count)")
@@ -54,7 +60,7 @@ class DealParsingTests: XCTestCase {
 """.data(using: .utf8)!
         
         do {
-            let photos = try JSONDecoder().decode([URL].self, from: example)
+            let photos = try decoder.decode([URL].self, from: example)
             
             let shouldBe: [String] = [
                 "https://res.cloudinary.com/mediocre/image/upload/v1511214860/ulzymtibqzkewyfpc0ow.png",
@@ -99,7 +105,7 @@ class DealParsingTests: XCTestCase {
 """.data(using: .utf8)!
         
         do {
-            let story = try JSONDecoder().decode(MehDealStory.self, from: example)
+            let story = try decoder.decode(MehDealStory.self, from: example)
             
             let title = "Consider The Hedgehog"
             XCTAssert(story.title == title)
@@ -116,7 +122,7 @@ class DealParsingTests: XCTestCase {
 {"accentColor":"#2b203e","backgroundColor":"#8E7dad","backgroundImage":"https://res.cloudinary.com/mediocre/image/upload/v1511211099/ihdi3matbpiihi6lqhxo.jpg","foreground":"dark"}
 """.data(using: .utf8)!
         do {
-            let theme = try JSONDecoder().decode(MehDealTheme.self, from: example)
+            let theme = try decoder.decode(MehDealTheme.self, from: example)
             
             let accentColor = UIColor(
                 red: CGFloat(0x2b) / CGFloat(0xff),
@@ -149,7 +155,7 @@ class DealParsingTests: XCTestCase {
 {"commentCount":35,"createdAt":"2017-11-21T05:00:05.645Z","id":"5a13b2d5cb6c920d90c23562","replyCount":26,"url":"https://meh.com/forum/topics/2-for-tuesday-microfiber-sheets-sets","voteCount":1}
 """.data(using: .utf8)!
         do {
-            let topic = try JSONDecoder().decode(MehDealTopic.self, from: example)
+            let topic = try decoder.decode(MehDealTopic.self, from: example)
             
             let commentCount = 35
             XCTAssert(topic.commentCount == commentCount)
