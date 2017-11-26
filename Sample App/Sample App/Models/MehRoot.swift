@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+struct MehRoot: Decodable {
+    let deal: MehDeal
+}
