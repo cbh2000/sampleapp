@@ -29,6 +29,11 @@
 		D0B7B7091FCA31DE00F5E040 /* MehISO8601.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B7B7081FCA31DE00F5E040 /* MehISO8601.swift */; };
 		D0B7B70B1FCA364C00F5E040 /* MehDealItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B7B70A1FCA364C00F5E040 /* MehDealItem.swift */; };
 		D0B7B70D1FCA3CDD00F5E040 /* MehDealPurchaseQuantity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B7B70C1FCA3CDD00F5E040 /* MehDealPurchaseQuantity.swift */; };
+		D0B7B70F1FCA3FA000F5E040 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B7B70E1FCA3FA000F5E040 /* Network.swift */; };
+		D0B7B7111FCA3FE600F5E040 /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B7B7101FCA3FE600F5E040 /* NetworkTests.swift */; };
+		D0B7B7141FCA453800F5E040 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B7B7131FCA453800F5E040 /* Constants.swift */; };
+		D0B7B7161FCA45C700F5E040 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B7B7151FCA45C700F5E040 /* NetworkClient.swift */; };
+		D0B7B7181FCA45E100F5E040 /* URLSessionNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B7B7171FCA45E100F5E040 /* URLSessionNetworkClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +88,11 @@
 		D0B7B7081FCA31DE00F5E040 /* MehISO8601.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MehISO8601.swift; sourceTree = "<group>"; };
 		D0B7B70A1FCA364C00F5E040 /* MehDealItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MehDealItem.swift; sourceTree = "<group>"; };
 		D0B7B70C1FCA3CDD00F5E040 /* MehDealPurchaseQuantity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MehDealPurchaseQuantity.swift; sourceTree = "<group>"; };
+		D0B7B70E1FCA3FA000F5E040 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		D0B7B7101FCA3FE600F5E040 /* NetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
+		D0B7B7131FCA453800F5E040 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D0B7B7151FCA45C700F5E040 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		D0B7B7171FCA45E100F5E040 /* URLSessionNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionNetworkClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +187,7 @@
 		49D4C1F21FC498AC00A5424E /* Sample App */ = {
 			isa = PBXGroup;
 			children = (
+				D0B7B7121FCA452700F5E040 /* Network */,
 				49A964491FC4BAF800C64B8B /* Models */,
 				49D4C1F31FC498AC00A5424E /* AppDelegate.swift */,
 				49D4C1FD1FC498AC00A5424E /* Assets.xcassets */,
@@ -196,6 +207,7 @@
 				49D4C20D1FC498AC00A5424E /* Info.plist */,
 				49D4C2281FC4A52A00A5424E /* meh_sample.json */,
 				49D4C20B1FC498AC00A5424E /* Sample_AppTests.swift */,
+				D0B7B7101FCA3FE600F5E040 /* NetworkTests.swift */,
 			);
 			path = "Sample AppTests";
 			sourceTree = "<group>";
@@ -207,6 +219,17 @@
 				49D4C2181FC498AC00A5424E /* Info.plist */,
 			);
 			path = "Sample AppUITests";
+			sourceTree = "<group>";
+		};
+		D0B7B7121FCA452700F5E040 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				D0B7B7131FCA453800F5E040 /* Constants.swift */,
+				D0B7B70E1FCA3FA000F5E040 /* Network.swift */,
+				D0B7B7151FCA45C700F5E040 /* NetworkClient.swift */,
+				D0B7B7171FCA45E100F5E040 /* URLSessionNetworkClient.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -505,15 +528,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0B7B70F1FCA3FA000F5E040 /* Network.swift in Sources */,
 				499870E21FC4AE7E001D8EA9 /* MehDealTheme.swift in Sources */,
 				D0B7B7071FCA318700F5E040 /* MehDealLaunch.swift in Sources */,
 				49D4C1F61FC498AC00A5424E /* ViewController.swift in Sources */,
+				D0B7B7141FCA453800F5E040 /* Constants.swift in Sources */,
 				49D4C1FC1FC498AC00A5424E /* Sample_App.xcdatamodeld in Sources */,
 				49D4C2251FC49BC200A5424E /* MehRoot.swift in Sources */,
 				499870E01FC4AE24001D8EA9 /* MehDeal.swift in Sources */,
+				D0B7B7181FCA45E100F5E040 /* URLSessionNetworkClient.swift in Sources */,
 				D0B7B70B1FCA364C00F5E040 /* MehDealItem.swift in Sources */,
 				49A964481FC4BAF500C64B8B /* MehDealTopic.swift in Sources */,
 				D0B7B7091FCA31DE00F5E040 /* MehISO8601.swift in Sources */,
+				D0B7B7161FCA45C700F5E040 /* NetworkClient.swift in Sources */,
 				D0B7B7051FCA273C00F5E040 /* MehDealStory.swift in Sources */,
 				D0B7B70D1FCA3CDD00F5E040 /* MehDealPurchaseQuantity.swift in Sources */,
 				49D4C1F41FC498AC00A5424E /* AppDelegate.swift in Sources */,
@@ -524,6 +551,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0B7B7111FCA3FE600F5E040 /* NetworkTests.swift in Sources */,
 				49D4C20C1FC498AC00A5424E /* Sample_AppTests.swift in Sources */,
 				49D4C2271FC49BD200A5424E /* DealParsingTests.swift in Sources */,
 			);

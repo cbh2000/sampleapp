@@ -23,6 +23,8 @@ struct MehDealTheme: Decodable {
     let backgroundImage: URL
     let foreground: String
     
+    // TODO: UIColor decodable support probably could be added via an extension instead of a custom initializer...
+    
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
