@@ -11,6 +11,7 @@ import XCTest
 import Down
 @testable import Sample_App
 
+/// This file tests JSON decoding for the "deal" object in the root.
 class DealParsingTests: XCTestCase {
     let decoder = { () -> JSONDecoder in
         var decoder = JSONDecoder()

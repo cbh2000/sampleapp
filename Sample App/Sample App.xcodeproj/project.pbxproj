@@ -149,15 +149,9 @@
 		49A964491FC4BAF800C64B8B /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				499870DF1FC4AE24001D8EA9 /* MehDeal.swift */,
-				D0B7B70A1FCA364C00F5E040 /* MehDealItem.swift */,
-				D0B7B7061FCA318700F5E040 /* MehDealLaunch.swift */,
-				D0B7B7041FCA273C00F5E040 /* MehDealStory.swift */,
-				499870E11FC4AE7E001D8EA9 /* MehDealTheme.swift */,
-				49A964471FC4BAF500C64B8B /* MehDealTopic.swift */,
+				D0B7B7191FCA533A00F5E040 /* MehDeal */,
 				D0B7B7081FCA31DE00F5E040 /* MehISO8601.swift */,
 				49D4C2241FC49BC200A5424E /* MehRoot.swift */,
-				D0B7B70C1FCA3CDD00F5E040 /* MehDealPurchaseQuantity.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -206,8 +200,8 @@
 				49D4C2261FC49BD200A5424E /* DealParsingTests.swift */,
 				49D4C20D1FC498AC00A5424E /* Info.plist */,
 				49D4C2281FC4A52A00A5424E /* meh_sample.json */,
-				49D4C20B1FC498AC00A5424E /* Sample_AppTests.swift */,
 				D0B7B7101FCA3FE600F5E040 /* NetworkTests.swift */,
+				49D4C20B1FC498AC00A5424E /* Sample_AppTests.swift */,
 			);
 			path = "Sample AppTests";
 			sourceTree = "<group>";
@@ -215,8 +209,8 @@
 		49D4C2151FC498AC00A5424E /* Sample AppUITests */ = {
 			isa = PBXGroup;
 			children = (
-				49D4C2161FC498AC00A5424E /* Sample_AppUITests.swift */,
 				49D4C2181FC498AC00A5424E /* Info.plist */,
+				49D4C2161FC498AC00A5424E /* Sample_AppUITests.swift */,
 			);
 			path = "Sample AppUITests";
 			sourceTree = "<group>";
@@ -230,6 +224,20 @@
 				D0B7B7171FCA45E100F5E040 /* URLSessionNetworkClient.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		D0B7B7191FCA533A00F5E040 /* MehDeal */ = {
+			isa = PBXGroup;
+			children = (
+				499870DF1FC4AE24001D8EA9 /* MehDeal.swift */,
+				D0B7B70A1FCA364C00F5E040 /* MehDealItem.swift */,
+				D0B7B7061FCA318700F5E040 /* MehDealLaunch.swift */,
+				D0B7B7041FCA273C00F5E040 /* MehDealStory.swift */,
+				499870E11FC4AE7E001D8EA9 /* MehDealTheme.swift */,
+				49A964471FC4BAF500C64B8B /* MehDealTopic.swift */,
+				D0B7B70C1FCA3CDD00F5E040 /* MehDealPurchaseQuantity.swift */,
+			);
+			path = MehDeal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
