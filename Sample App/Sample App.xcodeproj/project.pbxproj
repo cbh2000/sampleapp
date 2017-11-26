@@ -28,6 +28,7 @@
 		D0B7B7071FCA318700F5E040 /* MehDealLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B7B7061FCA318700F5E040 /* MehDealLaunch.swift */; };
 		D0B7B7091FCA31DE00F5E040 /* MehISO8601.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B7B7081FCA31DE00F5E040 /* MehISO8601.swift */; };
 		D0B7B70B1FCA364C00F5E040 /* MehDealItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B7B70A1FCA364C00F5E040 /* MehDealItem.swift */; };
+		D0B7B70D1FCA3CDD00F5E040 /* MehDealPurchaseQuantity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B7B70C1FCA3CDD00F5E040 /* MehDealPurchaseQuantity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		D0B7B7061FCA318700F5E040 /* MehDealLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MehDealLaunch.swift; sourceTree = "<group>"; };
 		D0B7B7081FCA31DE00F5E040 /* MehISO8601.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MehISO8601.swift; sourceTree = "<group>"; };
 		D0B7B70A1FCA364C00F5E040 /* MehDealItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MehDealItem.swift; sourceTree = "<group>"; };
+		D0B7B70C1FCA3CDD00F5E040 /* MehDealPurchaseQuantity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MehDealPurchaseQuantity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 				49A964471FC4BAF500C64B8B /* MehDealTopic.swift */,
 				D0B7B7081FCA31DE00F5E040 /* MehISO8601.swift */,
 				49D4C2241FC49BC200A5424E /* MehRoot.swift */,
+				D0B7B70C1FCA3CDD00F5E040 /* MehDealPurchaseQuantity.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -512,6 +515,7 @@
 				49A964481FC4BAF500C64B8B /* MehDealTopic.swift in Sources */,
 				D0B7B7091FCA31DE00F5E040 /* MehISO8601.swift in Sources */,
 				D0B7B7051FCA273C00F5E040 /* MehDealStory.swift in Sources */,
+				D0B7B70D1FCA3CDD00F5E040 /* MehDealPurchaseQuantity.swift in Sources */,
 				49D4C1F41FC498AC00A5424E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
