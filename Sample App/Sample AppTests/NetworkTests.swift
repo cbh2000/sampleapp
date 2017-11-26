@@ -69,4 +69,60 @@ class NetworkTests: XCTestCase {
             }
         }
     }
+    
+    func testInvalidKey() {
+        let client = FakeClient(startClosure: { (request, callback) in
+            DispatchQueue.global().async {
+                let apiKey = Constants.apiKey
+                let url = URL(string: "https://api.meh.com/1/current.json?apikey=\(apiKey)")!
+                let response = HTTPURLResponse(url: url, statusCode: 403, httpVersion: nil, headerFields: nil)
+                callback(nil, response, nil)
+            }
+            return URLSessionTask()
+        })
+        
+        let expectation = self.expectation(description: "Waiting for request...")
+        
+        let network = try! Network(base: URL(string: "https://api.meh.com/")!, client: client)
+        _ = network.getCurrent { (root: MehRoot?, response: URLResponse?, error: Error?) -> Void in
+            XCTAssert(root == nil)
+            XCTAssert(response != nil)
+            XCTAssert(error == nil)
+            expectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 10) { (error) in
+            if let error = error {
+                XCTFail("Failed: \(error)")
+            }
+        }
+    }
+    
+    func testInvalidJSON() {
+        let client = FakeClient(startClosure: { (request, callback) in
+            DispatchQueue.global().async {
+                let apiKey = Constants.apiKey
+                let url = URL(string: "https://api.meh.com/1/current.json?apikey=\(apiKey)")!
+                let response = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: nil)
+                callback("{invalid}".data(using: .utf8)!, response, nil)
+            }
+            return URLSessionTask()
+        })
+        
+        let expectation = self.expectation(description: "Waiting for request...")
+        
+        let network = try! Network(base: URL(string: "https://api.meh.com/")!, client: client)
+        _ = network.getCurrent { (root: MehRoot?, response: URLResponse?, error: Error?) -> Void in
+            XCTAssert(root == nil)
+            XCTAssert(response != nil)
+            XCTAssert(error != nil)
+            expectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 10) { (error) in
+            if let error = error {
+                XCTFail("Failed: \(error)")
+            }
+        }
+    }
 }
